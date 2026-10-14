@@ -1,0 +1,31 @@
+1. demo folder
+2.server.js -  start server (port,()=>{print})
+3.config - db.js
+  mongoose.connect()
+4.models-Student.js
+  new mongoose.Schema()
+  mongoose.model()
+5.controllers - studentController.js
+  import ur model, write all functions,export functions
+6.routers - studentRoutes.js
+  import functions,create router , export router
+7.in server.js , import router and use.
+
+---------------------------------------------------
+2.  sessions,cookies,rbac
+ cookie-parser,connect-mongo,express-session
+
+1.create sessionMiddleware(5 -srs store cookie) and export
+2. server.js import sessionMiddleware,cookie-parser and use them
+3.creater model(user),controller(auth(register,login,logout)) and export
+4.write authroutes and then server.use - use authrouter
+5.create middleware - roleMiddleware(role based access),sessionAuth(login present 1st before 
+logout) and use in studentroutes.
+-------------------------------------------------------------------
+3.JWT instead of sessions
+
+1.Create services folder - and write generateToken function and use that during login in auth
+2.In middleware write requireJwtAuth i.e jwt.verify() and 5 step process.
+3.use this middleware in routes.
+-------------------------------------------------------------
+remember:any middleware related add ons should be done in routes only.
